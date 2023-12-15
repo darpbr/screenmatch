@@ -4,8 +4,7 @@ import br.com.darp.screenmatch.modelos.Filme;
 import br.com.darp.screenmatch.modelos.Serie;
 import br.com.darp.screenmatch.modelos.Titulo;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 public class PrincipalComListas
 {
@@ -20,7 +19,7 @@ public class PrincipalComListas
 
         var lost = new Serie("Lost", 2000);
 
-        ArrayList<Titulo> listaAssistidos = new ArrayList<>();
+        List<Titulo> listaAssistidos = new LinkedList<>();
         listaAssistidos.add(dogville);
         listaAssistidos.add(poderosoChefao);
         listaAssistidos.add(avatar);
@@ -44,8 +43,12 @@ public class PrincipalComListas
         System.out.println(buscaPorArtista);
 
 //        Lista de filmes ordenada por nome
-        System.out.println("Lista de assistidos ordenada");
+        System.out.println("Lista de assistidos ordenada por nome");
         Collections.sort(listaAssistidos);
+        System.out.println(listaAssistidos);
+
+        listaAssistidos.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Ordenando por ano");
         System.out.println(listaAssistidos);
     }
 }
