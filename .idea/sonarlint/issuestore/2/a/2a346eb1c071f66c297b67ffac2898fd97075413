@@ -1,9 +1,9 @@
 
 `
-java:S2259N"CA "NullPointerException" could be thrown; "outro" is nullable here.(¡ş¹Ğ8‹üûœÆ1
+java:S2259\"CA "NullPointerException" could be thrown; "outro" is nullable here.(¡ş¹Ğ8ïüÇ³Ï1
 m
-java:S1206K"PThis class overrides "equals()" and should therefore also override "hashCode()".(±ó§Ê8üûœÆ1
-L	java:S106<"+Replace this use of System.out by a logger.(œ‹­—øÿÿÿÿ8™üûœÆ1
-L	java:S106="+Replace this use of System.out by a logger.(Ø‘à±ùÿÿÿÿ8šüûœÆ1
+java:S1206Y"PThis class overrides "equals()" and should therefore also override "hashCode()".(±ó§Ê8ñüÇ³Ï1
+L	java:S106J"+Replace this use of System.out by a logger.(œ‹­—øÿÿÿÿ8ùüÇ³Ï1
+L	java:S106K"+Replace this use of System.out by a logger.(Ø‘à±ùÿÿÿÿ8úüÇ³Ï1
 <
-java:S2097K"Add a type test to this method.(±ó§Ê8›üûœÆ1
+java:S2097Y"Add a type test to this method.(±ó§Ê8úüÇ³Ï1

@@ -1,5 +1,7 @@
 package br.com.darp.screenmatch.modelos;
 
+import br.com.darp.screenmatch.excecao.ErroDeConversaoDeAnoException;
+
 public class Titulo implements Comparable<Titulo>
 {
     private String nome;
@@ -13,6 +15,18 @@ public class Titulo implements Comparable<Titulo>
     {
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public Titulo(final TituloOmdb tituloOmdb)
+    {
+        this.nome = tituloOmdb.title();
+        if(tituloOmdb.year().length() > 4)
+        {
+            throw new ErroDeConversaoDeAnoException("Não foi possível converter ano com mais de 04 caracteres!");
+        }
+        this.anoDeLancamento = Integer.valueOf(tituloOmdb.year());
+        var duracao = tituloOmdb.runtime().split(" ");
+        this.duracaoEmMinutos = Integer.valueOf(duracao[0]);
     }
 
     public int getTotalDeAvaliacoes()
@@ -82,5 +96,15 @@ public class Titulo implements Comparable<Titulo>
     public int compareTo(final Titulo o)
     {
         return this.nome.compareTo(o.nome);
+    }
+
+    @Override
+    public String toString()
+    {
+        return "{" +
+                "\nTitulo: " + nome + "," +
+                "\nAno: " + anoDeLancamento +
+                "\nDuração: " + duracaoEmMinutos + " min" +
+                "\n}";
     }
 }
